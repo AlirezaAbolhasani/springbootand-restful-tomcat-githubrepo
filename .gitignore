@@ -4,6 +4,9 @@
 ### IntelliJ IDEA ###
 *.iws
 *.ipr
+application.properties
+SpringbootandrestfullandtomcatApplicationTests.java
+SpringbootandrestfullandtomcatApplication.java
 
 ### NetBeans ###
 /nbproject/private/
