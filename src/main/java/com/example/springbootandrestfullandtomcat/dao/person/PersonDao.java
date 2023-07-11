@@ -4,6 +4,7 @@ import com.example.springbootandrestfullandtomcat.model.Person;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.UUID;
 
 public interface PersonDao {
@@ -16,5 +17,8 @@ public interface PersonDao {
     }
 
     List<Person> ShowData();
+
+    Optional<Person> selectNameById(UUID uuid );
+    Optional<Person> getNameByName( String name);
 
 }
