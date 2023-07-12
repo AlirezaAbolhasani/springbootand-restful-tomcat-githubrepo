@@ -18,7 +18,9 @@ public interface PersonDao {
 
     List<Person> ShowData();
 
-    Optional<Person> selectNameById(UUID uuid );
-    Optional<Person> getNameByName( String name);
+    Optional<Person> selectNameById(UUID id );
+    Optional<Person> getNameByName(String name);
 
+    Boolean deleteByID(UUID id);
+    Boolean updateByID(UUID id, Person person);
 }

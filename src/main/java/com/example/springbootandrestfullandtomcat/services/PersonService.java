@@ -35,4 +35,13 @@ public class PersonService {
     public  Optional<Person> getPerson(String name){
         return personDao.getNameByName(name);
     }
+    public boolean deleteAnItemByUseId(UUID id){
+        return personDao.deleteByID(id);
+    }
+
+    public boolean updatePerson(UUID id, Person person){
+        Boolean updateByID = personDao.updateByID(id,person);
+        return  updateByID;
+
+    }
 }

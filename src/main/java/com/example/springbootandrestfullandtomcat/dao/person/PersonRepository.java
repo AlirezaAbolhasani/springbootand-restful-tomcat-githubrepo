@@ -33,10 +33,36 @@ public class PersonRepository implements PersonDao{
 
     @Override
     public Optional<Person> getNameByName(String name) {
-
         return DB.stream()
                 .filter(Person -> Person.getName().equals(name))
                 .findFirst();
+    }
+
+    @Override
+    public Boolean deleteByID(UUID id) {
+        Optional<Person> person = selectNameById(id);
+        if(person.isEmpty()){
+            return false;
+        }else{
+            DB.remove(id);
+            return true;
+        }
+
+    }
+
+    @Override
+    public Boolean updateByID(UUID id, Person person) {
+        return selectNameById(id)
+                .map(p-> {
+                    int indexOfpersonToUpdate = DB.indexOf(p);
+                    if(indexOfpersonToUpdate >= 0){
+                        person.setId(id);
+                        DB.set(indexOfpersonToUpdate, person);
+                        return true;
+                    }
+                    return false;
+                })
+                .orElse(false);
     }
 
 }
