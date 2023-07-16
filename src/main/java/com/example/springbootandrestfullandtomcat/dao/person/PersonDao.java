@@ -15,7 +15,10 @@ public interface PersonDao {
         UUID id = UUID.randomUUID();
         return insertPerson(id,person);
     }
-
+    default int insertPerson2(Person person){
+        UUID id = UUID.randomUUID();
+        return insertPerson(id,person);
+    }
     List<Person> ShowData();
 
     Optional<Person> selectNameById(UUID id );

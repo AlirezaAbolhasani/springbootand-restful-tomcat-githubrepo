@@ -33,7 +33,6 @@ public class PersonController {
          return personService.selectNameByIdSRV(uuid)
          .orElse(null)        ;
     }
-
     //127.0.0.1:8080/webkaiser/Alireza
     @GetMapping(path = "{name}")
     public Person getPersonByName(@PathVariable("name") String name){
