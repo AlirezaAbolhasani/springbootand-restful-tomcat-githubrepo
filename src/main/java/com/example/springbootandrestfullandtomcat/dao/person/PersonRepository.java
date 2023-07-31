@@ -1,7 +1,6 @@
 package com.example.springbootandrestfullandtomcat.dao.person;
 
 import com.example.springbootandrestfullandtomcat.model.Person;
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
@@ -37,7 +36,6 @@ public class PersonRepository implements PersonDao{
                 .filter(Person -> Person.getName().equals(name))
                 .findFirst();
     }
-
     @Override
     public Boolean deleteByID(UUID id) {
         Optional<Person> person = selectNameById(id);
@@ -49,7 +47,6 @@ public class PersonRepository implements PersonDao{
         }
 
     }
-
     @Override
     public Boolean updateByID(UUID id, Person person) {
         return selectNameById(id)

@@ -2,6 +2,7 @@ package com.example.springbootandrestfullandtomcat.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import javax.validation.constraints.NotBlank;
 import java.util.UUID;
 
 public class Person {
@@ -16,7 +17,7 @@ public class Person {
     public UUID getId() {
         return id;
     }
-
+    @NotBlank
     public String getName() {
         return name;
     }
