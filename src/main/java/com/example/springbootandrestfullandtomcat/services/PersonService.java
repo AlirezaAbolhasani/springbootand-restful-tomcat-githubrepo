@@ -38,9 +38,9 @@ public class PersonService {
     public boolean deleteAnItemByUseId(UUID id){
         return personDao.deleteByID(id);
     }
-
     public boolean updatePerson(UUID id, Person person){
         Boolean updateByID = personDao.updateByID(id,person);
         return  updateByID;
     }
+
 }
